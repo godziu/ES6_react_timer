@@ -1,11 +1,11 @@
-class Stopwatch {
+class Stopwatch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             times: {
                 minutes: 0,
                 seconds: 0,
-                miliseconds: 0,
+                miliseconds: 0
             }
         }
         this.running = false;
@@ -22,7 +22,7 @@ class Stopwatch {
     }
 
     format(times) {
-    	return pad0(times.minutes) + ' : ' + pad0(times.seconds) + ' : ' + pad0(Math.floor(times.miliseconds));
+    	 return `${pad0(times.minutes)} : ${pad0(times.seconds)} : ${pad0(Math.floor(times.miliseconds))}`;
     }
 
     start() {
@@ -66,7 +66,7 @@ class Stopwatch {
                 </nav>
                 {this.format(this.state.times)}
             </div>
-            )
+        )
     }
 }
 
